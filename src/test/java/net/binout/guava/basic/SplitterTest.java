@@ -14,7 +14,13 @@ public class SplitterTest {
     @Test
     public void splitter_with_trim() {
         List<String> results = Splitter.on(",").trimResults().splitToList("PSG, OM, FCGB");
-        assertThat(results).contains("PSG", "OM", "FCGB");
+        assertThat(results).contains("PSG", "OM", "FCGB").hasSize(3);
+    }
+
+    @Test
+    public void splitter_omit_empty() {
+        List<String> results = Splitter.on(",").omitEmptyStrings().splitToList("PSG,OM,,");
+        assertThat(results).contains("PSG", "OM").hasSize(2);
     }
 
     @Test
