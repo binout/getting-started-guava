@@ -13,20 +13,23 @@ public class SplitterTest {
 
     @Test
     public void splitter_with_trim() {
-        List<String> results = Splitter.on(",").trimResults().splitToList("PSG, OM, FCGB");
-        assertThat(results).contains("PSG", "OM", "FCGB").hasSize(3);
+        List<String> results = Splitter.on(",").trimResults().splitToList("Muppet, New Team, Flynet");
+        assertThat(results).hasSize(3).contains("Muppet", "New Team", "Flynet");
     }
 
     @Test
     public void splitter_omit_empty() {
-        List<String> results = Splitter.on(",").omitEmptyStrings().splitToList("PSG,OM,,");
-        assertThat(results).contains("PSG", "OM").hasSize(2);
+        List<String> results = Splitter.on(",").omitEmptyStrings().splitToList("Muppet,New Team,,");
+        assertThat(results).hasSize(2).contains("Muppet", "New Team");
     }
 
     @Test
     public void map_splitter() {
-        Map<String,String> resultMap = Splitter.on(".").withKeyValueSeparator("#").split("Paris#PSG.Marseille#OM.Bordeaux#FCGB");
-        assertThat(resultMap).contains(MapEntry.entry("Paris", "PSG")).contains(MapEntry.entry("Marseille", "OM")).contains(MapEntry.entry("Bordeaux", "FCGB"));
+        Map<String,String> resultMap = Splitter.on(",").withKeyValueSeparator("#").split("MP#Muppet,NT#New Team,FL#Flynet");
+        assertThat(resultMap).hasSize(3)
+                .contains(MapEntry.entry("MP", "Muppet"))
+                .contains(MapEntry.entry("NT", "New Team"))
+                .contains(MapEntry.entry("FL", "Flynet"));
     }
 
 }
