@@ -7,6 +7,8 @@ public class Player implements Comparable<Player> {
 
     String firstName;
     String lastName;
+    int age;
+    int number;
 
     public String getFirstName() {
         return firstName;
@@ -22,6 +24,22 @@ public class Player implements Comparable<Player> {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     @Override
