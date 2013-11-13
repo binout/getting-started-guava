@@ -13,6 +13,18 @@ public class Players {
         return newPlayer("Olivier", "Atton").setNumber(10);
     }
 
+    public static Player benBecker() {
+        return newPlayer("Ben", "Becker").setNumber(7);
+    }
+
+    public static Player markLanders() {
+        return newPlayer("Mark", "Landers").setNumber(10);
+    }
+
+    public static Player julianRoss() {
+        return newPlayer("Julian", "Ross").setNumber(10);
+    }
+
     public static Player jamesDerrick() {
         return newPlayer("James", "Derrick").setNumber(7);
     }
