@@ -14,32 +14,36 @@ public class Player implements Comparable<Player> {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public Player setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public Player setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public Player setAge(int age) {
         this.age = age;
+        return this;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public Player setNumber(int number) {
         this.number = number;
+        return this;
     }
 
     @Override
