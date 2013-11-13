@@ -15,13 +15,13 @@ public class FunctionsTest {
 
     @Test
     public void apply() {
-        String firstDate = new Function<Date, String>() {
+        String formatDate = new Function<Date, String>() {
             @Override
             public String apply(Date date) {
-                return new SimpleDateFormat().format(date);
+                return new SimpleDateFormat("dd/MM/yyyy").format(date);
             }
         }.apply(new Date(0));
-        assertThat(firstDate).isEqualTo("01/01/70 01:00");
+        assertThat(formatDate).isEqualTo("01/01/1970");
     }
 
     @Test
